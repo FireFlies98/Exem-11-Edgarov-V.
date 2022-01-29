@@ -1,0 +1,277 @@
+.header {
+    background: url(../images/first-screen-image.png) no-repeat;
+    background-size: cover;
+    min-height: 119vh;
+    // -webkit-box-shadow: 12px 29px 81px 0px rgba(248, 251, 250, 0.911);
+    // -moz-box-shadow: 12px 29px 81px 0px rgba(245, 251, 252, 0.911);
+    // box-shadow: 30px 29px 130px 50px rgba(245, 251, 252, 0.911);
+
+    @include mini-desktop {
+        min-height: 100vh;
+        padding-bottom: 9em;
+    }
+
+    @include ladtop {
+        min-height: 80vh;
+        padding-bottom: 8em;
+        box-shadow: none;
+    }
+}
+
+.header-box {
+    padding-top: 31px;
+    margin-bottom: 9.3em;
+
+    @include phone {
+        margin-bottom: 4em;
+    }
+}
+
+.header-header {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(9px);
+}
+
+.header_logo {
+    margin-left: 64px;
+
+    @include phone {
+        margin-left: 25px;
+    }
+}
+
+.header_navigation {
+    flex: 1;
+}
+
+.header_navigation--list {
+    display: flex;
+    justify-content: end;
+    margin-right: 40px;
+
+    @include mini-desktop {
+        margin-right: 25px;
+    }
+
+    @include ladtop {
+        display: none;
+    }
+}
+
+.header_navigation--list__item {
+    margin-left: 32px;
+    font-size: $a-font-size-14;
+    line-height: $a-line-height-24;
+    letter-spacing: 0.08em;
+    font-family: $font-lato;
+}
+
+.header_navigation--list__item:hover {
+    color: #689FF2;;
+}
+
+.header-dark {
+    margin-right: 64px;
+    width: 32px;
+    height: 32px;
+    border-radius: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, .3);
+
+    @include ladtop {
+        margin-right: 120px;
+    }
+
+    @include phone {
+        margin-right: 80px;
+        width: 28px;
+        height: 28px;
+    }
+}
+
+.header-dark:hover {
+    background: rgba(0, 0, 0, .3);
+}
+
+.header-introduction {
+    width: 90%;
+    margin: auto;
+}
+
+.header-introduction__title {
+    font-size: $h1-font-size-44;
+    line-height: $h1-line-height-52;
+    font-family: $font-playfair-display;
+    margin-bottom: 24px;
+
+    @include phone {
+        font-size: $h1-font-size-30;
+        line-height: $h1-line-height-46;
+    }
+}
+
+.header-title__text {
+    color: rgba(104, 159, 242, 1);
+    font-style: italic;
+}
+
+.header-introduction__text {
+    margin-bottom: 48px;
+
+    @include p;
+
+    @include phone {
+        font-size: $p-font-size-14;
+        margin-bottom: 34px;
+    }
+}
+
+.header-introduction__button {
+    color: #53F3CD;
+
+    @include a
+}
+
+.header-introduction__button::before {
+    content: "";
+    width: 5.4em;
+    height: 13px;
+    background-color: #53F3CD;
+    opacity: .3;
+    display: flex;
+    position: relative;
+    top: 25px;
+    left: 11px;
+}
+
+.header-introduction__button:hover {
+    opacity: $a-opacity-08;
+}
+
+// burger menu
+
+.menu__box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    padding: 20px 0;
+    list-style: none;
+    text-align: center;
+    background-color: rgba(104, 159, 242, .9);
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+    transition-duration: .5s;
+    opacity: .7;
+
+    @include phone {
+        opacity: .9;
+    }
+}
+
+.mobile--navigation {
+    display: none;
+
+    @include ladtop {
+        display: block;
+    }
+}
+
+.navigation-menu__item {
+    display: block;
+    margin: 7px 0;
+    color: #FFFFFF;
+    font-size: $a-font-size-14;
+    text-decoration: none;
+    transition-duration: .5s;
+}
+
+.navigation-menu__item:hover {
+    color: rgb(100, 145, 137);
+}
+
+#menu__toggle {
+    opacity: 0;
+
+    @include ladtop {
+        display: none;
+    }
+
+    @include mini-desktop {
+        display: none;
+    }
+
+    @include desktop {
+        display: none;
+    }
+}
+
+.navigation__btn {
+    display: none;
+    position: absolute;
+    align-items: center;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+
+    @include ladtop {
+        display: flex;
+        justify-content: end;
+        right: 64px;
+        top: 27px;
+    }
+
+    @include phone {
+        display: flex;
+        justify-content: end;
+        right: 25px;
+        top: 27px;
+    }
+}
+
+.navigation__btn > span,
+.navigation__btn > span::before,
+.navigation__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #689FF2;
+    transition-duration: .5s;
+}
+
+.navigation__btn > span::before {
+    content: "";
+    top: -7px;
+}
+
+.navigation__btn > span::after {
+    content: "";
+    top: 7px;
+}
+
+#menu__toggle:checked ~ .navigation__btn > span {
+    transform: rotate(45deg);
+}
+
+#menu__toggle:checked ~ .navigation__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+}
+
+#menu__toggle:checked ~ .navigation__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+#menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    left: 0;
+}

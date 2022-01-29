@@ -1,30 +1,1312 @@
 .main-section__one {
     display: flex;
-    // background: linear-gradient(rgba(255, 255, 255, 0) rgba(255, 255, 255, 1));
+
+    @include ladtop {
+        display: grid;
+        max-height: 800px;
+    }
+
+    @include phone {
+        max-height: 500px;
+    }
 }
 
 .section__one--image {
     position: relative;
     bottom: 165px;
-    width: 52.2%;
-    height: 38em;
-    margin-left: 67px;
+    width: 31.4em;
+    height: 37.8em;
+    margin-left: 3.7em;
+    background-size: cover;
+
+    @include mini-desktop {
+        position: absolute;
+        top: 40.5em;
+    }
+
+    @include ladtop {
+        position: static;
+        margin-left: 5.55em;
+    }
+
+    @include phone {
+        margin-left: 0;
+        height: 27em;
+    }
 }
 
-// .section__one--image-city {
-//     width: 100%;
-//     height: auto;
-//     // background-size: cover;
-// }
+.section__one--image-city {
+    background-size: cover;
+    box-shadow: 0px 15px 25px 60px rgba(247, 252, 252, 0.973);
+
+    @include ladtop {
+        box-shadow: 0px 0px 70px 120px rgba(247, 250, 249, 0.973);
+    }
+
+    @include phone {
+        width: 24em;
+        height: 25em;
+        box-shadow: none;
+    }
+}
 
 .section-one__rating {
     display: flex;
-    width: 83%;
-    height: 31em;
+    width: 48em;
+    height: 32em;
     position: relative;
     opacity: .9;
     z-index: 1;
     right: 155px;
     background: #FFFFFF;
-    bottom: 111px;
+    bottom: 118px;
+
+    @include mini-desktop {
+        width: 48em;
+        right: 0;
+        left: 5em;
+    }
+
+    @include ladtop {
+        display: grid;
+        width: 31.5em;
+        height: 37.8em;
+        left: 5.55em; 
+        bottom: 37.8em;
+    }
+
+    @include phone {
+        width: 24em;
+        height: 28em;
+        left: 0;
+        bottom: 30em;
+    }
+}
+
+.rating-box {
+    margin-left: 61px;
+    margin-top: 33px;
+
+    @include ladtop {
+        display: none;
+    }
+
+    @include phone {
+        margin-top: 6px;
+    }
+}
+
+.rating-box__title {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 12px;
+}
+
+.image-dollar {
+    margin-left: 30px;
+}
+
+.box__title {
+    font-size: $h2-font-size-68;
+    line-height: $h2-line-height-72;
+    font-family: $font-playfair-display;
+}
+
+.rating__title--three {
+    margin-left: 1.4em;
+    margin-bottom: 12px;
+}
+
+.rating-box__text {
+    
+    @include p;
+}
+
+.rating-text-one {
+    margin-left: 2.1em;
+    margin-bottom: 2.7em;
+
+    @include phone {
+        margin-bottom: 1em;
+    }
+}
+
+.rating-text-two {
+    margin-left: 2em;
+    margin-bottom: 2.7em;
+
+    @include phone {
+        margin-bottom: 1em;
+    }
+}
+
+.rating__text--three {
+    margin-left: 4.5em;
+}
+
+.rating-line {
+    width: 82px;
+    border: 1px solid #85BBB1;
+    margin-left: 4.5em;
+    margin-bottom: 2.2em;
+}
+
+.rating-inner {
+    margin-top: 2.3em;
+    margin-left: 6em;
+
+    @include phone {
+        margin-left: 5em;
+        margin-top: 1.7em
+    }
+}
+
+.rating-inner__text {
+    
+    @include p;
+
+    @include phone {
+        font-size: 14px;
+    }
+}
+
+.inner__text--one {
+    margin-bottom: 2em;
+}
+
+.inner__text--two {
+    margin-bottom: 3.8em;
+}
+
+.rating-inner__button {
+    color: rgba(241, 137, 123, 1);
+
+    @include a
+}
+
+.rating-inner__button::before {
+    content: "";
+    width: 8.6em;
+    height: 13px;
+    background-color: #F1897B;
+    opacity: .3;
+    display: flex;
+    position: relative;
+    top: 23px;
+    left: 11px;
+}
+
+.rating-inner__button:hover {
+    opacity: $a-opacity-08;
+}
+
+.main-section__two {
+    max-width: 87%;
+    margin: auto;
+}
+
+.section__two--box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 86px;
+    margin-bottom: 7.8em;
+
+    @include mini-desktop {
+        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+        margin-top: 1em;
+    }
+
+    @include ladtop {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 40px;
+        margin-bottom: 6em;
+    }
+
+    @include phone {
+        margin-bottom: 2em;
+    }
+}
+
+.box-body {
+    border-top: 1px solid #E4E4E4;
+    padding-top: 32px;
+    max-width: 520px;
+}
+
+.box-body__title {
+    margin-bottom: 24px;
+
+    @include h3;
+
+    @include ladtop {
+        margin-bottom: 12px;
+        font-size: $h3-font-size-20;
+        line-height: $h3-line-height-24;
+    }
+}
+
+.box-body__text {
+    
+    @include p;
+
+    @include mini-desktop {
+        br {
+            display: none;
+        }
+    }
+
+    @include ladtop {
+        font-size: $p-font-size-14;
+        line-height: $p-line-height-18;
+        .br {
+            display: none;
+        }
+    }
+}
+
+.box-body__text-one {
+    margin-bottom: 50px;
+
+    @include ladtop {
+        margin-bottom: 30px;
+    }
+
+    @include phone {
+        margin-bottom: 0;
+    }
+}
+
+.main-section__three {
+    max-width: 90%;
+    margin: auto;
+
+    @include phone {
+        height: 9em;
+    }
+}
+
+.section__three--images {
+    position:relative;
+    display:inline-block;
+    width: 100%;
+}
+
+.section__three--images-background {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.section__three--images-quote {
+    position: absolute;
+    bottom: 15.5em;
+    left: 7.5em;
+
+    @include mini-desktop {
+        width: 4em;
+        height: auto;
+        left: 4em;
+        bottom: 12.5em;
+    }
+
+    @include ladtop {
+        width: 3em;
+        height: auto;
+        left: 3em;
+        bottom: 9em;
+    }
+
+    @include phone {
+        width: 1.5em;
+        height: auto;
+        left: 2em;
+        bottom: 5em;
+    }
+}
+
+.section__three--title {
+    display: grid;
+    font-size: $h4-font-size-32;
+    line-height: $h4-line-height-46;
+    letter-spacing: .04em;
+    color: #FFFFFF;
+    position: relative;
+    bottom: 10.4em;
+    left: 6.1em;
+
+    @include mini-desktop {
+        font-size: $h4-font-size-26;
+        line-height: $h4-line-height-36;
+        left: 4.4em;
+        bottom: 10em;
+    }
+
+    @include ladtop {
+        font-size: $h4-font-size-18;
+        line-height: $h4-line-height-24;
+        left: 4.8em;
+    }
+
+    @include phone {
+        font-size: $h4-font-size-12;
+        line-height: $h4-line-height-16;
+        left: 4.2em;
+        bottom: 8.8em;
+    }
+}
+
+.section__three--subtitle {
+    font-size: $p-font-size-20;
+    line-height: $p-line-height-20;
+    letter-spacing: .08em;
+    font-family: $font-playfair-display;
+    color: #FFFFFF;
+    position: relative;
+    bottom: 13em;
+    left: 10em;
+    font-style: italic;
+
+    @include mini-desktop {
+        font-size: $p-font-size-18;
+        left: 6.5em;
+        bottom: 12em;
+    }
+
+    @include ladtop {
+        font-size: $p-font-size-14;
+        line-height: $p-line-height-18;
+        left: 6.3em;
+        bottom: 11em;
+    }
+
+    @include phone {
+        font-size: $p-font-size-10;
+        left: 5em;
+        bottom: 9.5em;
+    }
+}
+
+.main-section__four {
+    display: flex;
+    flex-direction: column;
+    max-width: 62.5%;
+    margin: auto;
+    margin-bottom: 6.7em;
+
+    @include mini-desktop {
+        max-width: 85%;
+    }
+
+    @include ladtop {
+        max-width: 83%;
+        margin-bottom: 3em;
+    }
+    @include phone {
+        max-width: 95%;
+        margin-bottom: 0;
+    }
+}
+
+.section__four--body {
+    width: 50em;
+    height: 30em;
+    border: 1px solid #E4E4E4;
+    box-sizing: border-box;
+    border-radius: 32px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    margin-bottom: 3em;
+
+    @include mini-desktop {
+        width: 40em;
+        height: 25em;
+    }
+
+    @include ladtop {
+        width: 32em;
+        height: 18em;
+        border-radius: 20px;
+    }
+
+    @include phone {
+        flex-direction: column;
+        width: 20em;
+        height: 30em;
+        margin-bottom: 1.5em;
+    }
+}
+
+.section__four--circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid #E4E4E4;
+    margin: 0 8px 0 8px;
+
+    @include ladtop {
+        width: 8px;
+        height: 8px;
+    }
+
+    @include phone {
+        margin: 5px 0 5px;
+    }
+}
+
+.video-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section__four--video {
+    width: 45.1em;
+    height: 27.9em;
+    opacity: .2;
+    border: 1px solid #E4E4E4;
+    border-radius: 8px;
+
+    @include mini-desktop {
+        width: 35em;
+        height: 23em;
+    }
+
+    @include ladtop {
+        width: 27.5em;
+        height: 16em;
+    }
+
+    @include phone {
+        width: 19em;
+        height: 26.5em;
+        background: rgba(133, 187, 177, .5);
+    }
+}
+
+.video-button {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: rgba(88, 98, 145, .2);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    @include mini-desktop {
+        width: 100px;
+        height: 100px;
+    }
+
+    @include ladtop {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+.treangel {
+
+    @include ladtop {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.video-button:hover {
+    background: rgba(67, 75, 110, 0.4);
+}
+
+.video-button__play {
+    position: relative;
+    left: 5px;
+    z-index: 1;
+}
+
+.section__four--box {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid #E4E4E4;
+    margin-left: 14px;
+
+    @include ladtop {
+        width: 24px;
+        height: 24px;
+    }
+
+    @include phone {
+        margin-top: 7px;
+    }
+}
+
+.section__four--title {
+    margin-bottom: .5em;
+
+    @include mini-desktop {
+        margin-left: 1.8em;
+    }
+
+    @include ladtop {
+        font-size: $h3-font-size-34;
+        line-height: $h3-line-height-38;
+
+        br {
+            display: none;
+        }
+    }
+
+    @include phone {
+        font-size: $h3-font-size-28;
+        margin-left: 5px;
+    }
+
+    @include h3
+}
+
+.section__four--text {
+
+    @include mini-desktop {
+        margin-left: 3em;
+    }
+
+    @include ladtop {
+
+        br {
+            display: none;
+        }
+    }
+
+    @include phone {
+        font-size: $p-font-size-14;
+        margin-left: 5px;
+        line-height: $p-line-height-22;
+    }
+
+    @include p
+}
+
+.main-section__five {
+    max-width: 90%;
+    margin: auto;
+    display: flex;
+    max-height: 30.5em;
+    margin-bottom: 8.3em;
+
+    @include ladtop {
+        margin-bottom: 3em;
+    }
+
+    @include phone {
+        flex-direction: column;
+    }
+}
+
+.section__five--sidebar {
+    
+    @include phone {
+        height: 18em;
+    }
+}
+
+.five--sidebar__beckground {
+    width: 31.4em;
+    height: 30em;
+
+    @include ladtop {
+        visibility: hidden;
+    }
+}
+
+.section__five--widget {
+    width: 13.3em;
+    height: 19em;
+    background: #161926;
+    border-radius: 12px;
+    position: relative;
+    left: 4.2em;
+    bottom: 24.2em;
+
+    @include ladtop {
+        left: 2em;
+        z-index: 1;
+    }
+
+    @include phone {
+        left: 4em;
+        bottom: 29em;
+    }
+}
+
+.widget--currency {
+    display: flex;
+    padding: 23px 0 16px;
+    border-bottom: 2px solid rgba(255, 255, 255, .1);
+    margin: 0 21px 10px 19px;
+}
+
+.currency-button {
+    color: rgba(255, 255, 255, 1);
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: .04em;
+    opacity: .8;
+    height: 1.3em;
+    display: flex;
+    align-items: center;
+}
+
+.currency-button:hover {
+    width: 48px;
+    height: 18px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.currency-icon {
+    margin-left: 6px;
+}
+
+.currency-arow {
+    margin: 0 15px 0 15px;
+}
+
+.widget--rate {
+    padding-bottom: 13px;
+    border-bottom: 2px solid rgba(255, 255, 255, .1);
+    margin: 0 21px 13px 19px;
+}
+
+.rate-text {
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: .04em;
+    font-weight: 600;
+    color: #FFFFFF;
+    opacity: .3;
+}
+
+.rate-numbers {
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: .01em;
+    color: rgba(255, 255, 255, .7);
+    font-style: italic;
+}
+
+.rate-number {
+    font-size: 56px;
+    opacity: .9;
+    font-style: normal;
+    margin-left: 6px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.widget--pay {
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, .1);
+    margin: 0 21px 10px 19px;
+}
+
+.pay-convercion {
+    display: flex;
+}
+
+.convercion {
+    font-size: 12px;
+    line-height: 24px;
+    font-weight: 600;
+    letter-spacing: .04em;
+    color: rgba(255, 255, 255, .3);
+
+}
+
+.convercion-input {
+    width: 6em;
+    height: 2em;
+    border: none;
+    background: rgba(255, 255, 255, .1);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, .7);
+    outline: none;
+    padding-left: 9px;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 600;
+    font-family: $font-lato;
+    margin-bottom: 18px;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    }
+}
+
+.input-bitcoin {
+    background-image: url(../images/Vector.svg);
+    background-repeat: no-repeat;
+    background-position: 5em;
+    margin-right: 10px;
+}
+
+.input-token {
+    background-image: url(../images/Vector_two.svg);
+    background-repeat: no-repeat;
+    background-position: 5em;
+}
+
+.pay-fees {
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: .04em;
+    font-weight: 600;
+    color: rgba(255, 255, 255, .3);
+}
+
+.maker-fees {
+    margin-right: 6em;
+}
+
+.exchange-fees {
+    margin-right: 4.5em;
+}
+
+.pay-input {
+    width: 51px;
+    height: 17px;
+    background: rgba(255, 255, 255, .06);
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    color: rgba(255, 255, 255, .7);
+    font-size: 10px;
+    font-family: $font-lato;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    }
+}
+
+.widget--footer {
+    margin: 0 21px 0 19px;
+    display: flex;
+}
+
+.widget--footer__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.widget--footer__image-circle {
+    position: absolute;
+}
+
+.widget--footer__button {
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: .04;
+    font-weight: 600;
+    color: rgba(255, 255, 255, .3);
+    cursor: pointer;
+}
+
+.widget--footer__button-item {
+    margin-left: 14px;
+    margin-right: 30px;
+    color: rgba(255, 255, 255, .8);
+
+}
+
+.widget--footer__button-item:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+.widget--footer__button-item-two:hover {
+    color: rgba(255, 255, 255, .6);
+}
+
+// .widget--footer__input {
+// 	display: none;
+// }
+
+// .widget--footer__label {
+//     display: inline-block;
+// 	cursor: pointer;
+// 	position: relative;
+// 	padding-left: 25px;
+// 	margin-right: 0;
+// 	line-height: 18px;
+// 	user-select: none;
+// }
+
+// .widget--footer__label::before {
+//     content: "";
+// 	display: inline-block;
+// 	width: 17px;
+// 	height: 18px;
+// 	position: absolute;
+// 	left: 0;
+// 	bottom: 1px;
+// 	background: url(https://snipp.ru/img/radio-1.png) 0 0 no-repeat;
+// }
+
+// .widget--footer__input:checked + .widget--footer__label::before {
+//     background: url(https://snipp.ru/img/radio-2.png) 0 0 no-repeat;
+// }
+
+// .widget--footer__label:hover::before {
+//     filter: brightness(120%);
+// }
+
+// .widget--footer__input:disabled + .widget--footer__label::before {
+//     filter: grayscale(100%);
+// }
+
+.section__five--aside {
+    width: 42.3em;
+    height: 25.1em;
+    background: rgba(255, 255, 255, .9);
+    position: relative;
+    right: 9.6em;
+    top: 2.2em;
+    display: flex;
+    flex-direction: column;
+
+    @include mini-desktop {
+        width: 40em;
+        height: 25em;
+    }
+
+    @include ladtop {
+        height: 17em;
+        width: 100%;
+        right: 14em;
+        align-items: flex-end;
+    }
+
+    @include phone {
+        display: none;
+    }
+}
+
+.five--aside__box {
+    display: flex;
+    margin-top: 4em;
+    margin-left: 3.5em;
+    width: 100%;
+
+    @include mini-desktop {
+        margin-top: 3em;
+        margin-left: 2em;
+    }
+
+    @include ladtop {
+        flex-direction: column;
+        margin-top: 0;
+        margin-left: 10em;
+    }
+}
+
+.five--aside__inner {
+    margin-right: 10em;
+
+    @include mini-desktop {
+        margin-right: 3em;
+    }
+
+    @include ladtop {
+        margin-right: 0;
+        margin-top: 3.5em;
+    }
+}
+
+.five--aside__inner-two {
+    margin-right: 7.6em;
+
+    @include mini-desktop {
+        margin-right: 3em;
+    }
+
+    @include ladtop {
+        margin-right: 0;
+    }
+}
+
+.aside__inner--title {
+    font-size: $h5-font-size-24;
+    line-height: $h5-line-height-48;
+    font-family: $font-playfair-display;
+    color: #262A3F;
+    margin-bottom: 14px;
+
+    @include mini-desktop {
+        font-size: $h5-font-size-20;
+        line-height: $h5-line-height-28;
+        margin-top: 1em;
+    }
+
+    @include ladtop {
+        margin-bottom: 6px;
+        margin-top: 1em;
+
+        br {
+            display: none;
+        }
+    }
+}
+
+.aside__inner--text {
+
+    @include mini-desktop{
+        font-size: $p-font-size-16;
+        line-height: $p-line-height-20;
+
+        br {
+            display: none;
+        }
+    }
+
+    @include ladtop {
+        line-height: $p-line-height-18;
+        br {
+            display: none;
+        }
+    }
+    
+    @include p
+}
+
+.inner--text__margin {
+    margin-bottom: 13px;
+
+    @include mini-desktop {
+        margin-bottom: 10px;
+    }
+
+    @include ladtop {
+        margin-bottom: 4px;
+    }
+}
+
+.five--aside__button {
+    width: 17.1em;
+    height: 5.2em;
+    border: 1px solid #E4E4E4;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include mini-desktop {
+        width: 10em;
+        height: 2.5em;
+        margin-top: 4em;
+
+        a {
+            font-size: 16px;
+
+            div {
+                display: none;
+            }
+        }
+    }
+
+    @include ladtop {
+        width: 8em;
+        height: 2em;
+        margin-top: 1em;
+
+        a {
+            font-size: 12px;
+
+            div {
+                display: none;
+            }
+        }
+    }
+}
+
+.five--aside__button:hover {
+    background: #fde6e2;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.main-section__six {
+    display: grid;
+    grid-template-columns: 25.3em 1fr;
+    margin-bottom: 10em;
+
+    @include mini-desktop {
+        grid-template-columns: 22em 1fr;
+        margin-bottom: 5em;
+    }
+
+    @include ladtop {
+        grid-template-columns: 19em 1fr;
+        margin-bottom: 2em;
+    }
+
+    @include phone {
+        grid-template-columns: none;
+        margin-bottom: 0;
+    }
+}
+
+.section__six--sidebar {
+    margin-left: 3.7em;
+
+    @include mini-desktop {
+        margin-left: 3em;
+    }
+
+    @include ladtop {
+        margin-left: 2em;
+    }
+
+    @include phone {
+        margin-bottom: 1em;
+    }
+}
+
+.six--sidebar__title {
+    margin-bottom: 1.1em;
+
+    @include mini-desktop {
+        font-size: $h3-font-size-34;
+        line-height: $h3-line-height-38;
+        margin-bottom: .8em;
+    }
+
+    @include ladtop {
+        font-size: $h3-font-size-28;
+        line-height: $h3-line-height-34;
+        margin-bottom: .5em;
+    }
+
+    @include h3
+}
+
+.six--sidebar__text {
+    margin-bottom: 7.4em;
+
+    @include mini-desktop {
+        font-size: $p-font-size-16;
+        line-height: $p-line-height-20;
+    }
+
+    @include ladtop {
+        font-size: $p-font-size-14;
+    }
+
+    @include phone {
+        margin-bottom: .5em;
+    }
+
+    @include p
+}
+
+.six--sidebar__box {
+    width: 18.3em;
+    height: 2.2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mini-desktop {
+        width: 16em;
+    }
+
+    @include ladtop {
+        width: 15em;
+    }
+
+    @include phone {
+        width: 18em;
+    }
+}
+
+.sidebar__box--text {
+    font-size: $p-font-size-24;
+    line-height: $p-line-height-48;
+    font-family: $font-playfair-display;
+
+    @include mini-desktop {
+        font-size: $p-font-size-22;
+        line-height: $p-line-height-34;
+    }
+
+    @include ladtop {
+        font-size: $p-font-size-20;
+    }
+    
+    span {
+        font-size: $span-font-size-40;
+        line-height: $span-line-height-48;
+
+        @include mini-desktop {
+            font-size: $span-font-size-34;
+            line-height: $span-line-height-40;
+        }
+
+        @include ladtop {
+            font-size: $span-font-size-30;
+            line-height: $span-line-height-36;
+        }
+    }
+}
+
+.sidebar__box--arow-left {
+    font-size: $span-font-size-30;
+    color: #000000;
+    opacity: 0.1;
+    margin-right: 1em;
+    cursor: pointer;
+
+    @include ladtop {
+        font-size: $span-font-size-26;
+    }
+}
+
+.sidebar__box--arow-right {
+    font-size: $span-font-size-30;
+    color: #85BBB1;
+
+    @include ladtop {
+        font-size: $span-font-size-26;
+    }
+}
+
+.sidebar__box--arow-right:hover {
+    cursor: pointer;
+    opacity: .6;
+}
+
+.section__six--cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    &::-webkit-scrollbar {
+        width: 0px;
+        background: transparent; 
+    }
+}
+
+.section__six--card {
+    margin-right: 1.1em;
+
+    @include ladtop {
+        margin-right: .8em;
+    }
+}
+
+.six--card__container {
+    height: 18.6em;
+
+    @include phone {
+        height: 11em;
+        margin-left: 1.8em;
+    }
+}
+
+.six--card__image {
+    width: 26em;
+
+    @include mini-desktop {
+        width: 22em;
+    }
+
+    @include ladtop {
+        width: 20em;
+    }
+
+    @include phone {
+        position: relative;
+        bottom: 4.15em;
+    }
+}
+
+.six--card__box {
+    width: 26em;
+    height: 18.5em;
+    background: rgba(25, 28, 41, 0.7);
+    position: relative;
+    bottom: 334px;
+    z-index: 1;
+    cursor: pointer;
+
+    @include mini-desktop {
+        width: 22em;
+    }
+
+    @include ladtop {
+        width: 20em;
+    }
+
+    @include phone {
+        height: 14.3em;
+    }
+}
+
+.six--card__text {
+    font-size: $p-font-size-16;
+    line-height: $p-line-height-26;
+    color: rgba(255, 255, 255, .8);
+    margin-left: 2.6em;
+    padding-top: 2.8em;
+
+    @include mini-desktop {
+        font-size: $p-font-size-14;
+        line-height: $p-line-height-22;
+        padding-top: 6em;
+    }
+
+    @include ladtop {
+        font-size: $p-font-size-12;
+        line-height: $p-line-height-20;
+        padding-top: 9em;
+    }
+
+    @include phone {
+        padding-top: 7em;
+    }
+}
+
+.six--card__autor {
+    font-size: $p-font-size-20;
+    line-height: $p-line-height-20;
+    letter-spacing: .08em;
+    color: #FFFFFF;
+    font-family: $font-playfair-display;
+    font-style: italic;
+    margin-left: 2.3em;
+    padding-top: 1.8em;
+
+    @include ladtop {
+        font-size: $p-font-size-16;
+    }
+
+    @include phone {
+        padding-top: .4em;
+        margin-left: 2em;
+    }
+}
+
+.autor-text {
+    padding-top: 3.2em;
+
+    @include phone {
+        padding-top: 1.7em;
+    }
 }

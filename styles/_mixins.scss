@@ -1,0 +1,42 @@
+@mixin h3 {
+    font-size: $h3-font-size-40;
+    line-height: $h3-line-height-48;
+    font-family: $font-playfair-display;
+}
+
+@mixin p {
+    line-height: $p-line-height-26;
+    font-weight: $p-font-weight-300;
+    opacity: $p-opacity-08;
+}
+
+@mixin a {
+    font-size: $a-font-size-20;
+    line-height: $a-line-height-20;
+    font-weight: $a-font-weight-700;
+    letter-spacing: .08em;
+}
+
+@mixin desktop {
+    @media (max-width: $desktop) {
+        @content;
+    }
+}
+
+@mixin mini-desktop {
+    @media (max-width: $mini-desktop) {
+        @content;
+    }
+}
+
+@mixin ladtop {
+    @media (max-width: $ladtop) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media (max-width: $phone) {
+        @content;
+    }
+}
